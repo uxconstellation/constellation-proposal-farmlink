@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmLink Capital — Partnership Proposal | Constellation</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #173F3F;
+      --orange:      #FE6E36;
+      --black:       #1B1C21;
+      --darkgreen:   #160C15;
+      --white:       #FFFFFF;
+      --text-light:  rgba(255,255,255,0.72);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Satoshi', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    em { font-style: normal; color: var(--orange); }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(27,28,33,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    nav img { height: 26px; }
+
+    .nav-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      padding: 0.35rem 0.85rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 2.5rem 6rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(23,63,63,0.55) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 20% 80%, rgba(254,110,54,0.12) 0%, transparent 60%),
+                  var(--black);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      max-width: 560px;
+      margin-bottom: 3rem;
+      line-height: 1.65;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .meta-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .meta-value { font-size: 0.9rem; font-weight: 600; color: var(--white); }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 0; }
+
+    /* SECTIONS */
+    .section { padding: 6rem 2.5rem; }
+    .section--dark { background: var(--black); }
+    .section--teal { background: var(--teal); }
+
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      color: var(--text-light);
+      max-width: 680px;
+      margin-bottom: 1rem;
+    }
+
+    /* CHALLENGE CARDS */
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .challenge-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .challenge-card svg {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1.25rem;
+      color: var(--orange);
+    }
+
+    .challenge-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      color: var(--white);
+    }
+
+    .challenge-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* APPROACH SECTION */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .approach-grid { grid-template-columns: 1fr; }
+    }
+
+    .approach-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .approach-card-header {
+      padding: 1.75rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .approach-card-header.teal { background: rgba(23,63,63,0.5); }
+    .approach-card-header.orange { background: rgba(254,110,54,0.12); }
+
+    .approach-card-header h3 {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .step-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .approach-card-body {
+      padding: 1.75rem 2rem;
+    }
+
+    .approach-card-body p {
+      font-size: 0.9rem;
+      max-width: none;
+      margin-bottom: 0.75rem;
+    }
+
+    /* TIMELINE */
+    .timeline { margin-top: 3rem; }
+
+    .timeline-phase {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .timeline-phase:last-child { border-bottom: none; }
+
+    .phase-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      padding-top: 0.2rem;
+    }
+
+    .phase-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-desc {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      max-width: none;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+
+    .tag--teal { background: rgba(23,63,63,0.6); color: rgba(255,255,255,0.8); border: 1px solid rgba(23,63,63,0.8); }
+    .tag--orange { background: rgba(254,110,54,0.15); color: var(--orange); border: 1px solid rgba(254,110,54,0.3); }
+
+    @media (max-width: 640px) {
+      .timeline-phase { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+
+    /* RETAINER TIERS */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
+
+    .tier-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .tier-card:hover {
+      border-color: rgba(254,110,54,0.4);
+      transform: translateY(-4px);
+    }
+
+    .tier-card.selected {
+      border-color: var(--orange);
+      background: rgba(254,110,54,0.07);
+    }
+
+    .tier-card-head {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .tier-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .tier-badge--advisory { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+    .tier-badge--recommended { background: var(--orange); color: var(--white); }
+    .tier-badge--comprehensive { background: rgba(23,63,63,0.6); color: rgba(255,255,255,0.8); border: 1px solid rgba(23,63,63,0.9); }
+
+    .tier-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--white);
+    }
+
+    .tier-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-light);
+      letter-spacing: 0;
+    }
+
+    .tier-hours {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 0.4rem;
+    }
+
+    .tier-card-body {
+      padding: 1.75rem 2rem;
+      flex: 1;
+    }
+
+    .tier-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      max-width: none;
+      margin-bottom: 1rem;
+    }
+
+    .tier-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .tier-includes li {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .tier-includes li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      margin-top: 0.55rem;
+    }
+
+    .tier-card-foot {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .select-btn {
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .select-btn:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .tier-card.selected .select-btn {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+
+    /* ACCEPT SECTION */
+    .accept-section {
+      background: var(--teal);
+      padding: 6rem 2.5rem;
+      text-align: center;
+    }
+
+    .accept-section h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+
+    .accept-section p {
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .accept-selection-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 1rem 1.75rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .accept-selection-display strong {
+      color: var(--orange);
+    }
+
+    .accept-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 2.5rem;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .accept-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .accept-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    .accept-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1.25rem;
+      display: block;
+    }
+
+    /* CONFIRMATION STATE */
+    .confirmation {
+      display: none;
+      background: rgba(254,110,54,0.1);
+      border: 1px solid rgba(254,110,54,0.3);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .confirmation.visible { display: block; }
+
+    .confirmation h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+
+    .confirmation p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* TEAM SECTION */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .team-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .team-avatar {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .team-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .team-role { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.6rem; }
+    .team-desc { font-size: 0.85rem; color: var(--text-light); max-width: none; margin-bottom: 0; }
+
+    /* TERMS */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .terms-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .terms-card h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .terms-card p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--darkgreen);
+      padding: 3rem 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-inner img { height: 22px; opacity: 0.7; }
+
+    .footer-inner p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .hero { padding: 0 1.25rem 5rem; }
+      .section { padding: 4rem 1.25rem; }
+      .accept-section { padding: 4rem 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: #1e2028;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 2.5rem;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .modal h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      max-width: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-tier-summary {
+      background: rgba(254,110,54,0.08);
+      border: 1px solid rgba(254,110,54,0.2);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-tier-summary .tier-name { font-size: 1rem; margin-bottom: 0.25rem; }
+    .modal-tier-summary .tier-price { font-size: 1.5rem; }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-confirm {
+      flex: 1;
+      padding: 0.9rem 1.5rem;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .modal-confirm:hover { opacity: 0.88; }
+
+    .modal-cancel {
+      padding: 0.9rem 1.5rem;
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .modal-cancel:hover { border-color: rgba(255,255,255,0.3); }
+
+    /* SUCCESS STATE */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .success-state.visible { display: block; }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(254,110,54,0.15);
+      border: 2px solid var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .success-icon svg { width: 24px; height: 24px; color: var(--orange); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <img src="assets/logo-white.svg" alt="Constellation" />
+    <span class="nav-tag">FarmLink Capital &middot; Partnership Proposal</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-label">Partnership Proposal &middot; May 2026</p>
+      <h1>Building the future of<br /><em>agricultural finance</em>,<br />together.</h1>
+      <p class="hero-sub">FarmLink Capital is solving one of South Africa's most important problems: making financial access real for farmers. This proposal outlines how Constellation partners with you to make that journey seamless, trusted, and built to scale.</p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Prepared for</span>
+          <span class="meta-value">Tiaan Venter, FarmLink Capital</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Prepared by</span>
+          <span class="meta-value">Aldo Calitz, Constellation</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Engagement type</span>
+          <span class="meta-value">Monthly Retainer</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Date</span>
+          <span class="meta-value">May 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 01 CONTEXT -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label">01 &mdash; Context</p>
+      <h2>We understand what<br />you are building.</h2>
+      <p>FarmLink Capital is not just a fintech platform. It is a trust infrastructure for South African agriculture. Your Choose-Optimise-Recommend-Build-Connect process is, at its core, a service design framework. The challenge is making that experience consistent, intuitive, and scalable across every farmer and every financial institution that touches your platform.</p>
+      <p>We have seen this challenge before. Getting farmers to trust digital systems enough to act on them is not a technology problem. It is a design and experience problem. That is exactly where Constellation works.</p>
+
+      <div class="challenge-grid">
+        <div class="challenge-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <h4>Two audiences, one platform</h4>
+          <p>Farmers and enterprise clients have fundamentally different jobs to be done. The experience needs to serve both without compromising either.</p>
+        </div>
+        <div class="challenge-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <h4>Trust before data</h4>
+          <p>Farmers are being asked to share sensitive operational data. Without the right UX signals, trust is never established and adoption stalls before it starts.</p>
+        </div>
+        <div class="challenge-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <h4>Speed to market</h4>
+          <p>The MVP needs to be clean, functional, and enterprise-grade without a 12-month build cycle. Component standardisation and design system thinking accelerate this significantly.</p>
+        </div>
+        <div class="challenge-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <h4>Conversion patterns</h4>
+          <p>The current Figma prototype has strong visual ambition but non-standard conversion patterns. Fixing these early prevents costly rework post-launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 02 HOW WE WORK TOGETHER -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label">02 &mdash; How We Work Together</p>
+      <h2>A partnership built on<br />rigour, not just delivery.</h2>
+      <p>Constellation does not operate as a vendor that takes a brief and disappears for six weeks. Every engagement is a working partnership. We embed ourselves in your process, challenge assumptions before they become expensive mistakes, and deliver work that is grounded in how your users actually think and behave.</p>
+      <p>Our approach for FarmLink follows a structured service design methodology, applied iteratively each month based on where the product is and where it needs to go.</p>
+
+      <div class="approach-grid">
+        <div class="approach-card">
+          <div class="approach-card-header teal">
+            <div class="step-label">Foundation</div>
+            <h3>Service Blueprint and Journey Mapping</h3>
+          </div>
+          <div class="approach-card-body">
+            <p>Before any screen is designed, we map the full farmer and enterprise journey across your five-step process. This surfaces friction, data security requirements, and the exact moments where trust is built or lost. It is the foundation everything else is built on.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--teal">Service Blueprints</span>
+              <span class="tag tag--teal">User Journey Mapping</span>
+              <span class="tag tag--teal">Friction Analysis</span>
+            </div>
+          </div>
+        </div>
+        <div class="approach-card">
+          <div class="approach-card-header orange">
+            <div class="step-label">Design Execution</div>
+            <h3>Component Standardisation and UX Design</h3>
+          </div>
+          <div class="approach-card-body">
+            <p>We take ownership of the Figma files, standardise the component library, and rebuild the conversion patterns to enterprise-grade quality. Every screen is designed with farmer-first thinking, not technology-first assumptions.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--orange">Figma Design System</span>
+              <span class="tag tag--orange">Component Library</span>
+              <span class="tag tag--orange">Wireframing</span>
+            </div>
+          </div>
+        </div>
+        <div class="approach-card">
+          <div class="approach-card-header teal">
+            <div class="step-label">Iteration</div>
+            <h3>Monthly Roadmap and Prioritisation</h3>
+          </div>
+          <div class="approach-card-body">
+            <p>Every month opens with a roadmap session. We review what has been built, what the data or feedback is showing, and agree on the highest-impact priorities for the month ahead. No guesswork, no wasted hours.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--teal">Monthly Roadmap Session</span>
+              <span class="tag tag--teal">Prioritisation Framework</span>
+            </div>
+          </div>
+        </div>
+        <div class="approach-card">
+          <div class="approach-card-header orange">
+            <div class="step-label">Scalability</div>
+            <h3>Automation and Repeatability</h3>
+          </div>
+          <div class="approach-card-body">
+            <p>FarmLink's model requires the farmer onboarding journey to be consistent at scale without Tiaan walking every farmer through it personally. We design for automation from the start, so the experience is repeatable and reliable as you grow.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--orange">Onboarding Automation</span>
+              <span class="tag tag--orange">Scalable Patterns</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 03 DELIVERY RHYTHM -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label">03 &mdash; Delivery Rhythm</p>
+      <h2>What every month<br />looks like.</h2>
+      <p>Retainers only work when both parties know exactly what to expect. Every month runs the same way, regardless of which tier you are on. The difference between tiers is the depth and volume of work, not the quality of the process.</p>
+
+      <div class="timeline">
+        <div class="timeline-phase">
+          <div class="phase-label">Week 1</div>
+          <div>
+            <div class="phase-title">Roadmap Session</div>
+            <p class="phase-desc">A 60-minute alignment call to open the month. We review the previous month, surface any new information from the product or market, and lock in the priorities for the weeks ahead. You set the direction, we build the plan.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--teal">60-Minute Call</span>
+              <span class="tag tag--teal">Priority Lock-In</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-phase">
+          <div class="phase-label">Weeks 2 &amp; 3</div>
+          <div>
+            <div class="phase-title">Design and Strategy Sprint</div>
+            <p class="phase-desc">The core delivery window. Hours are focused on the agreed priorities, whether that is service blueprinting, wireframing, Figma design, or UX strategy. All work is documented and shared in your project portal as it is completed.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--orange">Design Execution</span>
+              <span class="tag tag--orange">Strategy Outputs</span>
+              <span class="tag tag--orange">Figma Deliverables</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-phase">
+          <div class="phase-label">Week 4</div>
+          <div>
+            <div class="phase-title">Review, Feedback, and Handoff</div>
+            <p class="phase-desc">All deliverables are presented for review. Feedback is incorporated, files are handed off to your development team, and the month closes with a written summary of what was completed, what moved, and what is queued for next month.</p>
+            <div class="timeline-tags">
+              <span class="tag tag--teal">Client Review</span>
+              <span class="tag tag--teal">Development Handoff</span>
+              <span class="tag tag--teal">Written Summary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 04 RETAINER TIERS -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label">04 &mdash; Partnership Tiers</p>
+      <h2>Choose the level of<br />partnership that fits.</h2>
+      <p>Every tier is a monthly retainer. There are no project-based fees, no surprise invoices, and no scope creep. You choose the depth of engagement that matches your current stage and budget, and you can scale up as FarmLink grows. All pricing is exclusive of VAT and based on a minimum 3-month commitment.</p>
+      <p>Select a tier below to proceed to acceptance.</p>
+
+      <div class="tiers-grid">
+
+        <!-- TIER 1 -->
+        <div class="tier-card" id="tier-1" onclick="selectTier(1)">
+          <div class="tier-card-head">
+            <div class="tier-badge tier-badge--advisory">Strategic Advisory</div>
+            <div class="tier-name">Advisory Retainer</div>
+            <div class="tier-price">R18,500 <span>/ month</span></div>
+            <div class="tier-hours">12 hours per month</div>
+          </div>
+          <div class="tier-card-body">
+            <p>Direct access to Aldo's strategic thinking. Ideal if your team is executing the design work and you need the right direction, challenge, and validation to ensure you are building the right thing.</p>
+            <ul class="tier-includes">
+              <li>12 hours of UX strategy and advisory per month</li>
+              <li>Monthly roadmap session to align priorities</li>
+              <li>Service blueprinting and journey mapping guidance</li>
+              <li>Review and critique of existing Figma designs</li>
+              <li>Written monthly summary of recommendations</li>
+              <li>Dedicated project portal in Notion</li>
+              <li>Direct communication channel with Aldo</li>
+            </ul>
+          </div>
+          <div class="tier-card-foot">
+            <button class="select-btn" id="select-btn-1">Select this tier</button>
+          </div>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="tier-card" id="tier-2" onclick="selectTier(2)">
+          <div class="tier-card-head">
+            <div class="tier-badge tier-badge--recommended">Recommended</div>
+            <div class="tier-name">UX and Design Partnership</div>
+            <div class="tier-price">R36,000 <span>/ month</span></div>
+            <div class="tier-hours">24 hours per month</div>
+          </div>
+          <div class="tier-card-body">
+            <p>The sweet spot for FarmLink's current stage. Strategy and hands-on design execution combined. We take ownership of the Figma files, standardise the component library, and deliver enterprise-grade designs ready for your development team.</p>
+            <ul class="tier-includes">
+              <li>Everything in Advisory Retainer</li>
+              <li>24 hours of dedicated UX and UI design per month</li>
+              <li>Full Figma design system ownership and standardisation</li>
+              <li>Farmer-facing and enterprise-facing screen design</li>
+              <li>Conversion pattern audit and redesign</li>
+              <li>Component library built to enterprise standards</li>
+              <li>Development-ready handoff files each month</li>
+            </ul>
+          </div>
+          <div class="tier-card-foot">
+            <button class="select-btn" id="select-btn-2">Select this tier</button>
+          </div>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-card" id="tier-3" onclick="selectTier(3)">
+          <div class="tier-card-head">
+            <div class="tier-badge tier-badge--comprehensive">Comprehensive</div>
+            <div class="tier-name">Full Service Design</div>
+            <div class="tier-price">R54,000 <span>/ month</span></div>
+            <div class="tier-hours">36 hours per month</div>
+          </div>
+          <div class="tier-card-body">
+            <p>For when you are ready to go deep. Full service design coverage across the entire FarmLink platform, including user testing, onboarding automation design, and continuous iteration of the farmer and enterprise journeys.</p>
+            <ul class="tier-includes">
+              <li>Everything in UX and Design Partnership</li>
+              <li>36 hours of dedicated service design per month</li>
+              <li>End-to-end service design across all five platform steps</li>
+              <li>User testing facilitation and synthesis</li>
+              <li>Onboarding automation journey design</li>
+              <li>Gamification and engagement pattern design</li>
+              <li>Quarterly service design report and roadmap</li>
+            </ul>
+          </div>
+          <div class="tier-card-foot">
+            <button class="select-btn" id="select-btn-3">Select this tier</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 05 TERMS -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label">05 &mdash; Terms</p>
+      <h2>Simple, transparent,<br />no surprises.</h2>
+      <p>Retainers work because both parties know exactly what they are committing to. These are the terms that govern our engagement.</p>
+
+      <div class="terms-grid">
+        <div class="terms-card">
+          <h4>Minimum commitment</h4>
+          <p>3-month minimum on all tiers. Monthly rolling thereafter. Either party may exit with 30 days written notice after the initial term.</p>
+        </div>
+        <div class="terms-card">
+          <h4>Hours policy</h4>
+          <p>Unused hours do not roll over. We ensure every hour is pointed at something that matters. If a task looks like it will run over, we flag it before it happens.</p>
+        </div>
+        <div class="terms-card">
+          <h4>Scope changes</h4>
+          <p>Any work outside the agreed monthly scope is added to the following month's backlog and confirmed before any work begins. No surprises, no unilateral decisions.</p>
+        </div>
+        <div class="terms-card">
+          <h4>Pricing review</h4>
+          <p>Pricing is reviewed at the 3-month mark and annually thereafter. Any changes are communicated with 30 days notice.</p>
+        </div>
+        <div class="terms-card">
+          <h4>VAT</h4>
+          <p>All pricing is exclusive of VAT. VAT will be added to invoices at the applicable rate.</p>
+        </div>
+        <div class="terms-card">
+          <h4>Invoicing</h4>
+          <p>Invoices are issued on the 1st of each month, payable within 7 business days. A formal service agreement will be provided upon acceptance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 06 YOUR TEAM -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="section-label">06 &mdash; Your Team</p>
+      <h2>Who you are<br />working with.</h2>
+      <p>Constellation operates as a lean, AI-augmented team. You will always know who is working on your project and who to contact when something matters.</p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">A</div>
+          <div>
+            <div class="team-name">Aldo Calitz</div>
+            <div class="team-role">Chief Design Officer &middot; Account Lead</div>
+            <p class="team-desc">Your primary point of contact for everything. Aldo leads strategy, runs your monthly roadmap sessions, and is personally accountable for what gets delivered. If something matters, it goes through Aldo.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background: rgba(254,110,54,0.3);">C</div>
+          <div>
+            <div class="team-name">Constellation Team</div>
+            <div class="team-role">Design and Strategy Support</div>
+            <p class="team-desc">Depending on the tier and the work, additional Constellation team members may contribute to research, design, or documentation. All work is reviewed and signed off by Aldo before delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- 07 ACCEPT -->
+  <section class="accept-section" id="accept">
+    <div class="container" style="max-width: 680px;">
+      <p class="section-label" style="color: rgba(255,255,255,0.5);">07 &mdash; Accept the Proposal</p>
+      <h2>Ready to build<br /><em>something that matters?</em></h2>
+      <p>Select a tier from the options above, then click Accept to formally confirm the partnership. You will receive a welcome pack and a link to book your kickoff call within 24 hours.</p>
+
+      <div id="no-selection-msg" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem 1.75rem; margin-bottom: 2rem; font-size: 0.88rem; color: rgba(255,255,255,0.5);">
+        No tier selected yet. Scroll up to select a partnership tier.
+      </div>
+
+      <div id="selection-display" class="accept-selection-display" style="display: none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Selected: <strong id="selected-tier-name">--</strong> at <strong id="selected-tier-price">--</strong> / month</span>
+      </div>
+
+      <button class="accept-btn" id="accept-btn" disabled onclick="openModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Accept this proposal
+      </button>
+      <span class="accept-note">A service agreement will be sent to you within 24 hours of acceptance.</span>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <div id="modal-form">
+        <h3>Confirm your selection</h3>
+        <p>You are about to accept the Constellation partnership proposal. Please confirm the details below before proceeding.</p>
+        <div class="modal-tier-summary">
+          <div class="tier-name" id="modal-tier-name">--</div>
+          <div class="tier-price" id="modal-tier-price">--</div>
+          <div class="tier-hours" id="modal-tier-hours" style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 0.3rem;">--</div>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-confirm" onclick="confirmAcceptance()">Confirm acceptance</button>
+          <button class="modal-cancel" onclick="closeModal()">Go back</button>
+        </div>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="margin-bottom: 0.75rem;">Welcome to Constellation.</h3>
+        <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; max-width: none; margin-bottom: 1.5rem;">Your acceptance has been recorded. Aldo will be in touch within 24 hours with your service agreement and welcome pack. In the meantime, you can book your kickoff call using the link below.</p>
+        <a href="https://calendly.com/aldo-uxconstellation" target="_blank" style="display: inline-block; padding: 0.85rem 1.75rem; background: var(--orange); color: var(--white); font-family: 'Satoshi', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 8px;">Book your kickoff call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src="assets/logo-white.svg" alt="Constellation" />
+      <p>Prepared by Constellation &middot; May 2026 &middot; Confidential</p>
+      <p>FarmLink Capital Partnership Proposal &middot; uxconstellation.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const tiers = {
+      1: { name: 'Advisory Retainer', price: 'R18,500', hours: '12 hours per month' },
+      2: { name: 'UX and Design Partnership', price: 'R36,000', hours: '24 hours per month' },
+      3: { name: 'Full Service Design', price: 'R54,000', hours: '36 hours per month' }
+    };
+
+    let selectedTier = null;
+
+    function selectTier(num) {
+      selectedTier = num;
+
+      // Update card states
+      [1, 2, 3].forEach(n => {
+        const card = document.getElementById('tier-' + n);
+        const btn = document.getElementById('select-btn-' + n);
+        if (n === num) {
+          card.classList.add('selected');
+          btn.textContent = 'Selected';
+        } else {
+          card.classList.remove('selected');
+          btn.textContent = 'Select this tier';
+        }
+      });
+
+      // Update accept section
+      const t = tiers[num];
+      document.getElementById('selected-tier-name').textContent = t.name;
+      document.getElementById('selected-tier-price').textContent = t.price;
+      document.getElementById('selection-display').style.display = 'inline-flex';
+      document.getElementById('no-selection-msg').style.display = 'none';
+      document.getElementById('accept-btn').disabled = false;
+    }
+
+    function openModal() {
+      if (!selectedTier) return;
+      const t = tiers[selectedTier];
+      document.getElementById('modal-tier-name').textContent = t.name;
+      document.getElementById('modal-tier-price').textContent = t.price + ' / month';
+      document.getElementById('modal-tier-hours').textContent = t.hours;
+      document.getElementById('modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+    }
+
+    function confirmAcceptance() {
+      document.getElementById('modal-form').style.display = 'none';
+      document.getElementById('success-state').classList.add('visible');
+
+      // Notify Constellation internally via webhook (replace URL with actual endpoint)
+      const t = tiers[selectedTier];
+      fetch('https://hook.eu2.make.com/PLACEHOLDER_WEBHOOK_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          client: 'FarmLink Capital',
+          contact: 'Tiaan Venter',
+          tier: t.name,
+          price: t.price,
+          hours: t.hours,
+          accepted_at: new Date().toISOString()
+        })
+      }).catch(() => {
+        // Silent fail — acceptance is still recorded visually
+      });
+    }
+
+    // Close modal on overlay click
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+
+</body>
+</html>
