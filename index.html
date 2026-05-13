@@ -1198,25 +1198,43 @@
     }
 
     function confirmAcceptance() {
+      const t = tiers[selectedTier];
+      const acceptedAt = new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' });
+
+      // Submit acceptance notification to Aldo via FormSubmit
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://formsubmit.co/aldo@uxconstellation.com';
+      form.style.display = 'none';
+
+      const fields = {
+        '_subject': 'FarmLink Capital — Proposal Accepted: ' + t.name,
+        '_template': 'table',
+        '_next': window.location.href,
+        '_captcha': 'false',
+        'Client': 'FarmLink Capital',
+        'Contact': 'Tiaan Venter',
+        'Selected Tier': t.name,
+        'Monthly Investment': t.price,
+        'Hours per Month': t.hours,
+        'Accepted At': acceptedAt
+      };
+
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+
+      // Show success state immediately, then submit in background
       document.getElementById('modal-form').style.display = 'none';
       document.getElementById('success-state').classList.add('visible');
 
-      // Notify Constellation internally via webhook (replace URL with actual endpoint)
-      const t = tiers[selectedTier];
-      fetch('https://hook.eu2.make.com/PLACEHOLDER_WEBHOOK_URL', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          client: 'FarmLink Capital',
-          contact: 'Tiaan Venter',
-          tier: t.name,
-          price: t.price,
-          hours: t.hours,
-          accepted_at: new Date().toISOString()
-        })
-      }).catch(() => {
-        // Silent fail — acceptance is still recorded visually
-      });
+      setTimeout(() => form.submit(), 800);
     }
 
     // Close modal on overlay click
